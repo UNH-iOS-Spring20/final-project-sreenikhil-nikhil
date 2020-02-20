@@ -15,6 +15,15 @@
 		BD17CD7B23FC9FFF00FF017D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD17CD7923FC9FFF00FF017D /* LaunchScreen.storyboard */; };
 		BD17CD8623FC9FFF00FF017D /* Line_UpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD17CD8523FC9FFF00FF017D /* Line_UpTests.swift */; };
 		BD17CD9123FC9FFF00FF017D /* Line_UpUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD17CD9023FC9FFF00FF017D /* Line_UpUITests.swift */; };
+		BD17CDA723FCB05A00FF017D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD17CDA623FCB05A00FF017D /* User.swift */; };
+		BD17CDA823FCB05A00FF017D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD17CDA623FCB05A00FF017D /* User.swift */; };
+		BD17CDA923FCB05A00FF017D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD17CDA623FCB05A00FF017D /* User.swift */; };
+		BD17CDAB23FCC94200FF017D /* Tasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD17CDAA23FCC94200FF017D /* Tasks.swift */; };
+		BD17CDAC23FCC94200FF017D /* Tasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD17CDAA23FCC94200FF017D /* Tasks.swift */; };
+		BD17CDAD23FCC94200FF017D /* Tasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD17CDAA23FCC94200FF017D /* Tasks.swift */; };
+		BD17CDB323FCD63600FF017D /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD17CDB223FCD63600FF017D /* List.swift */; };
+		BD17CDB423FCD63600FF017D /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD17CDB223FCD63600FF017D /* List.swift */; };
+		BD17CDB523FCD63600FF017D /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD17CDB223FCD63600FF017D /* List.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +58,9 @@
 		BD17CD8C23FC9FFF00FF017D /* Line UpUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Line UpUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD17CD9023FC9FFF00FF017D /* Line_UpUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line_UpUITests.swift; sourceTree = "<group>"; };
 		BD17CD9223FC9FFF00FF017D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BD17CDA623FCB05A00FF017D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		BD17CDAA23FCC94200FF017D /* Tasks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tasks.swift; sourceTree = "<group>"; };
+		BD17CDB223FCD63600FF017D /* List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +111,7 @@
 		BD17CD6D23FC9FF900FF017D /* Line Up */ = {
 			isa = PBXGroup;
 			children = (
+				BD17CD9F23FCAE2E00FF017D /* Models */,
 				BD17CD6E23FC9FF900FF017D /* AppDelegate.swift */,
 				BD17CD7023FC9FF900FF017D /* SceneDelegate.swift */,
 				BD17CD7223FC9FF900FF017D /* ContentView.swift */,
@@ -134,6 +147,16 @@
 				BD17CD9223FC9FFF00FF017D /* Info.plist */,
 			);
 			path = "Line UpUITests";
+			sourceTree = "<group>";
+		};
+		BD17CD9F23FCAE2E00FF017D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BD17CDA623FCB05A00FF017D /* User.swift */,
+				BD17CDB223FCD63600FF017D /* List.swift */,
+				BD17CDAA23FCC94200FF017D /* Tasks.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,9 +290,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD17CDA723FCB05A00FF017D /* User.swift in Sources */,
 				BD17CD6F23FC9FF900FF017D /* AppDelegate.swift in Sources */,
 				BD17CD7123FC9FF900FF017D /* SceneDelegate.swift in Sources */,
+				BD17CDAB23FCC94200FF017D /* Tasks.swift in Sources */,
 				BD17CD7323FC9FF900FF017D /* ContentView.swift in Sources */,
+				BD17CDB323FCD63600FF017D /* List.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,6 +303,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD17CDA823FCB05A00FF017D /* User.swift in Sources */,
+				BD17CDB423FCD63600FF017D /* List.swift in Sources */,
+				BD17CDAC23FCC94200FF017D /* Tasks.swift in Sources */,
 				BD17CD8623FC9FFF00FF017D /* Line_UpTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -285,6 +314,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD17CDA923FCB05A00FF017D /* User.swift in Sources */,
+				BD17CDB523FCD63600FF017D /* List.swift in Sources */,
+				BD17CDAD23FCC94200FF017D /* Tasks.swift in Sources */,
 				BD17CD9123FC9FFF00FF017D /* Line_UpUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
