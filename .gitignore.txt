@@ -1,4 +1,4 @@
-Line\ Up/GoogleService-Info.plist
+
 
 # Created by https://www.gitignore.io/api/xcode,firebase,cocoapods
 # Edit at https://www.gitignore.io/?templates=xcode,firebase,cocoapods
@@ -54,5 +54,7 @@ DerivedData/
 
 ### Xcode Patch ###
 **/xcshareddata/WorkspaceSettings.xcsettings
+
+Line\ Up/GoogleService-Info.plist
 
 # End of https://www.gitignore.io/api/xcode,firebase,cocoapods
