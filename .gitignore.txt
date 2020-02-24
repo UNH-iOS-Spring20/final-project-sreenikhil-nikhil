@@ -1,4 +1,4 @@
-Line\ Up/GoogleService-Info.plist 
+Line Up/GoogleService-Info.plist 
 PODS:
   - Firebase/Analytics (6.17.0):
     - Firebase/Core
