@@ -55,6 +55,6 @@ DerivedData/
 ### Xcode Patch ###
 **/xcshareddata/WorkspaceSettings.xcsettings
 
-/Line\ up/*.plist
+/Line*up/*.plist
 
 # End of https://www.gitignore.io/api/xcode,firebase,cocoapods
