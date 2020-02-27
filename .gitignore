@@ -1,4 +1,4 @@
-*.plist
+
 
 # Created by https://www.gitignore.io/api/xcode,firebase,cocoapods
 # Edit at https://www.gitignore.io/?templates=xcode,firebase,cocoapods
@@ -55,6 +55,6 @@ DerivedData/
 ### Xcode Patch ###
 **/xcshareddata/WorkspaceSettings.xcsettings
 
-
+*.plist
 
 # End of https://www.gitignore.io/api/xcode,firebase,cocoapods
