@@ -7,8 +7,8 @@
 //
 
 class List{
-    var tasks = [Task]()
-    func addTask(task: Task){
+    var tasks = [Tasks]()
+    func addTask(task: Tasks){
         tasks.append(task)
     }
     

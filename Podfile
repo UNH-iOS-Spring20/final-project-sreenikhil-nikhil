@@ -7,7 +7,14 @@ target 'Line Up' do
 
   # Pods for Line Up
 # add the Firebase pod for Google Analytics
+pod 'Firebase'
+pod 'Firebase/Auth'
 pod 'Firebase/Analytics'
+pod 'Firebase/Database'
+pod 'Firebase/Firestore'
+pod 'Firebase/Core'
+pod 'FSCalendar'
+
 # add pods for any other desired Firebase products
 # https://firebase.google.com/docs/ios/setup#available-pods
 
