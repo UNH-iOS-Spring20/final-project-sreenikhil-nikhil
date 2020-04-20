@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import GoogleSignIn
 
 struct HamburgerOption: View {
     @ObservedObject var viewRouter: ViewRouter
@@ -59,6 +60,7 @@ struct HamburgerOption: View {
             , trailing:
             
             Button(action: {
+                GIDSignIn.sharedInstance()?.signOut()
                 self.viewRouter.currentPage = "page1"
             }) {
                 Text("Logout")

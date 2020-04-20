@@ -7,10 +7,12 @@
 //
 
 import SwiftUI
+import FirebaseFirestore
+
+let userCollectionRef = Firestore.firestore().collection("User")
 
 struct Signup: View {
     @ObservedObject var viewRouter: ViewRouter
-    @ObservedObject var Cobject: Controller
     @State var email: String = ""
     @State var password: String = ""
     @State var firstname: String = ""
@@ -56,15 +58,16 @@ struct Signup: View {
         let firstname: String = $firstname.wrappedValue
         let lastname: String = $lastname.wrappedValue
         
-        Cobject.doSignup(email: email, password: password, firstname: firstname, lastname: lastname)
+        let data = ["firstname": firstname, "lastname": lastname, "email": email, "password": password]as [String : Any]
+        
+        userCollectionRef.addDocument(data: data)
     }
-
+    
 }
 
 
 struct Signup_Previews: PreviewProvider {
     static var previews: some View {
-        Signup(viewRouter: ViewRouter(), Cobject:
-            Controller())
+        Signup(viewRouter: ViewRouter())
     }
 }

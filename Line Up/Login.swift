@@ -8,16 +8,30 @@
 
 import SwiftUI
 import Firebase
+import GoogleSignIn
+import FirebaseFirestore
 
+let newuserCollectionRef = Firestore.firestore().collection("User")
 struct Login: View{
     let db = Firestore.firestore()
+    
     @ObservedObject var viewRouter: ViewRouter
-    @ObservedObject var Cobject: Controller
-    @ObservedObject private var fbSession = firebaseSession
+      @ObservedObject private var users =
+        FirebaseCollection<User>(collectionRef: newuserCollectionRef)
+    
+    @ObservedObject var status = AppDelegate()
+   
     @State var email: String = ""
     @State var password: String = ""
+    @State var SuccessfulSignup: Bool = false
     var body: some View {
-        VStack(){
+        if(status.loggedIn){
+            print("Signup Successful")
+        }
+        else{
+            print("Status not successful")
+        }
+         return VStack(){
             Text("Login").bold().font(.title)
             Text("Organizing Things").bold().font(.subheadline).padding(10.0)
             
@@ -69,15 +83,16 @@ struct Login: View{
             }.padding(EdgeInsets(top: 20, leading: 0, bottom: 0, trailing: 0))
             
            
-        }
-    }
+        }// for V stack
+    }// for body view
+    
     
     func submit(){
         //I will do the job at any cost
         let email = $email.wrappedValue
         let password = $password.wrappedValue
         var flag = true
-        for user in fbSession.completeusers{
+        for user in users.items{
             print("Email is: \(user.email) and Password is: \(user.password)")
             if(user.email == email && user.password == password){
                 print("You are a Valid User")
@@ -89,21 +104,40 @@ struct Login: View{
       }
 
     func Fclick(){
-            print("I am clicked, Facebook")
+        
     }
 
     func Gclick(){
-        print("I am clicked, Google")
+          SocialLogin.attemptLoginGoogle()
+          print("I am clicked, Google")
+        
     }
 
     func NewUser(){
         
     }
+}// Foe login
 
-}
+
 
 struct Login_Previews: PreviewProvider {
     static var previews: some View {
-        Login(viewRouter: ViewRouter(), Cobject: Controller())
+        Login(viewRouter: ViewRouter())
     }
+}
+
+// -------------------------------------
+
+struct SocialLogin: UIViewRepresentable {
+    func makeUIView(context: UIViewRepresentableContext<SocialLogin>) -> UIView {
+        return UIView()
+    }
+
+    func updateUIView(_ uiView: UIView, context: UIViewRepresentableContext<SocialLogin>) {
+    }
+
+    static func attemptLoginGoogle(){
+        GIDSignIn.sharedInstance()?.presentingViewController = UIApplication.shared.windows.first?.rootViewController
+        GIDSignIn.sharedInstance()?.signIn()
+}
 }

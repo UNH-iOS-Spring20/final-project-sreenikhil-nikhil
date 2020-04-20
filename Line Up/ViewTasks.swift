@@ -10,6 +10,9 @@ import SwiftUI
 import FirebaseFirestore
 
 let newtaskCollectionRef = Firestore.firestore().collection("NewList")
+
+
+
 struct ViewTasks: View {
       @ObservedObject var viewRouter: ViewRouter
    @ObservedObject private var tasks =
@@ -21,17 +24,26 @@ struct ViewTasks: View {
                 List {
                     ForEach(tasks.items){
                         task in
+                        NavigationLink(destination:ModifyTask() ){
                         Text(task.task_Name)
                         }.padding(10)
+                            
+                      
                     .background(Color.gray)
                       .cornerRadius(4.0).frame(width: 300)
-                   
+                    
             }
         }.padding(EdgeInsets(top: 80, leading: 30, bottom: 0, trailing: 0))
            
-        
         }
     }
+
+
+func dateclicked(){
+    print("Date change is required")
+}
+}
+
 
 
 

@@ -14,10 +14,10 @@ struct MotherView: View {
        var body: some View {
            VStack{
                if  viewRouter.currentPage == "page1"{
-                Login(viewRouter: viewRouter, Cobject: Controller())
+                Login(viewRouter: viewRouter)
                }
                else if viewRouter.currentPage == "page2"{
-                Signup(viewRouter: viewRouter, Cobject: Controller())
+                Signup(viewRouter: viewRouter)
                }
                else if viewRouter.currentPage == "page3"{
                 HamburgerOption(viewRouter: viewRouter)
