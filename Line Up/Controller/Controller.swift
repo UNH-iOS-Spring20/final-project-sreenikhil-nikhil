@@ -17,7 +17,7 @@ import Foundation
 
 import Firebase
 
-class Controller: ObservableObject{
+/*class Controller: ObservableObject{
     let db = Firestore.firestore()
     @Published var allusers = [User]()
     
@@ -33,11 +33,11 @@ class Controller: ObservableObject{
         "firstname": firstname,
         "lastname": lastname
         ])
-    }
+    }*/
     
     //--------------------------------------------------------------------
     
-    func doLogin(){
+   /* func doLogin(){
         print("I am in login route")
         // Code to get all users from the firestore
         db.collection("User").getDocuments(){
@@ -60,7 +60,7 @@ class Controller: ObservableObject{
                 }
             }
         }
-    }
+    }*/
     
     //----------------------------------------------------------------------
-}
+//}

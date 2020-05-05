@@ -12,7 +12,7 @@ import FirebaseFirestore
 let userCollectionRef = Firestore.firestore().collection("User")
 
 struct Signup: View {
-    @ObservedObject var viewRouter: ViewRouter
+    @EnvironmentObject var viewRouter: ViewRouter
     @State var email: String = ""
     @State var password: String = ""
     @State var firstname: String = ""
@@ -62,12 +62,12 @@ struct Signup: View {
         
         userCollectionRef.addDocument(data: data)
     }
-    
+     
 }
 
 
 struct Signup_Previews: PreviewProvider {
     static var previews: some View {
-        Signup(viewRouter: ViewRouter())
+        Signup().environmentObject(ViewRouter())
     }
 }

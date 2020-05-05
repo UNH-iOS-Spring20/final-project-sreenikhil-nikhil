@@ -9,29 +9,30 @@
 import SwiftUI
 
 struct MenuView: View {
-     @ObservedObject var viewRouter: ViewRouter
+  
     var body: some View {
         VStack(alignment: .leading){
             
-            NavigationLink(destination: NewTask(viewRouter: ViewRouter())) {
+            NavigationLink(destination: NewTask()) {
                Text("Add Task")
                 .foregroundColor(.gray)
                 .font(.headline)
                 .padding(.top, 100)
             }
             
-            
-            Text("Edit Task")
+             NavigationLink(destination: CompletedTasks()) {
+            Text("Completed Tasks")
             .foregroundColor(.gray)
             .font(.headline)
              .padding(.top, 30)
+            }
             
             Text("Delete Task")
             .foregroundColor(.gray)
             .font(.headline)
             .padding(.top, 30)
             
-            NavigationLink(destination: ViewTasks(viewRouter: ViewRouter())) {
+            NavigationLink(destination: ViewTasks()) {
             Text("View Task")
             .foregroundColor(.gray)
             .font(.headline)
@@ -52,6 +53,6 @@ struct MenuView: View {
 
 struct MenuView_Previews: PreviewProvider {
     static var previews: some View {
-        MenuView(viewRouter: ViewRouter())
+        MenuView().environmentObject(ViewRouter())
     }
 }

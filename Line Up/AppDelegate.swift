@@ -12,9 +12,8 @@ import Firebase
 
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, ObservableObject {
+class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate{
    
-    @Published var loggedIn = false
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         print("First function is called")
@@ -39,9 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, Observ
         print("\(error.localizedDescription)")
         return
       }
-     
       guard let authentication = user.authentication else { return }
-        
       let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
                                                         accessToken: authentication.accessToken)
          Auth.auth().signIn(with: credential)
@@ -50,25 +47,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, Observ
               print("Firebase sign in error")
               print(error)
               return
-              
           }
-        // Logic to make user enter in to the homepage
           print("User is signed in with Firebase")
-            print("The email is: \(String(describing: user.profile.email))")
-            self.loggedIn = true
-            
+          UserDefaults.standard.set(true, forKey:"status")
+          UserDefaults.standard.set(authResult?.user.email, forKey: "Gmail")
+          // This is the line that made magic
+          NotificationCenter.default.post(name: NSNotification.Name("statusChange"), object: nil)
       }
-        
     }
+    
+
     
     func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
           print("Fourth function is called")
            print("User has disconnected")
     }
-
-    
-    
-
     // MARK: UISceneSession Lifecycle
 
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {

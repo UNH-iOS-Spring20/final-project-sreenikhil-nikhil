@@ -13,12 +13,24 @@ import FirebaseFirestore
 let taskCollectionRef = Firestore.firestore().collection("NewList")
 
 let lightGreyColor = Color(red: 239.0/255.0, green: 243.0/255.0, blue: 244.0/255.0, opacity: 1.0)
+
 struct NewTask: View {
-    @ObservedObject var viewRouter: ViewRouter
-     @State var TName = ""
-     @State var Notes = ""
-  
+      @EnvironmentObject var viewRouter: ViewRouter
+      @State var TName = ""
+      @State var Notes = ""
+      @EnvironmentObject var session: SessionClass
     
+     @State var status: Bool = false
+    @State var activeAlert: String = ""
+   
+    var alert: Alert {
+              Alert(title: Text("Result"), message: Text("Task Added Successful"), dismissButton: .default(Text("Ok")))
+          }
+    
+    var new_alert: Alert {
+              Alert(title: Text("Result"), message: Text("Failure Adding Task"), dismissButton: .default(Text("Ok")))
+          }
+
  
     var body: some View {
         VStack{
@@ -45,8 +57,16 @@ struct NewTask: View {
                                         
                                         Spacer()
                                     }.padding(12).background(Color.green).cornerRadius(4.0).frame(width: 150)
+            }.alert(isPresented: $status) {
+                switch activeAlert {
+                case "Successstatus":
+                    return Alert(title: Text("Result"), message: Text("Adding task successful"))
+                case "Failurestatus" :
+                    return Alert(title: Text("Result"), message: Text("Adding task Unsuccessful"))
+                default:
+                   return Alert(title: Text("Default Alert"), message: Text("This is the default alert"))
+                }
             }
-                
             Spacer()
             
         }
@@ -55,17 +75,28 @@ struct NewTask: View {
     // All Items to add
     // task_Name, due_Date, completed, Remainder, Notes
     func addTask(){
+        
         print("Adding Tasks")
-        let date = "Default"
+        let date = Date()
+      
         if !TName.isEmpty && !Notes.isEmpty{
-            let data = ["task_Name": TName, "due_Date": date, "completed": false, "Remainder": false, "Notes": Notes] as [String : Any]
+             status = true
+            activeAlert = "Successstatus"
+            let data = ["task_Name": TName, "due_Date": date, "completed": false, "Remainder": false, "Notes": Notes, "ssid": session.email] as [String : Any]
             taskCollectionRef.addDocument(data: data)
+           
         }
+        else{
+            status = true
+             activeAlert = "Failurestatus"
+        }
+        
     }
 }
 
 struct NewTask_Previews: PreviewProvider {
     static var previews: some View {
-        NewTask(viewRouter: ViewRouter())
+        NewTask().environmentObject(ViewRouter())
+        .environmentObject(SessionClass())
     }
 }

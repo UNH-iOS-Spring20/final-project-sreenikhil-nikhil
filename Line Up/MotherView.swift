@@ -9,21 +9,25 @@
 import SwiftUI
 
 struct MotherView: View {
-   @ObservedObject var viewRouter: ViewRouter    // The classic conceot of binding
+  // @ObservedObject var viewRouter: ViewRouter    // The classic conceot of binding
+    @EnvironmentObject var viewRouter: ViewRouter
        
        var body: some View {
            VStack{
-               if  viewRouter.currentPage == "page1"{
-                Login(viewRouter: viewRouter)
-               }
-               else if viewRouter.currentPage == "page2"{
-                Signup(viewRouter: viewRouter)
-               }
-               else if viewRouter.currentPage == "page3"{
-                HamburgerOption(viewRouter: viewRouter)
+           if  viewRouter.currentPage == "page1"{
+            Login()
+                 }
+                 else if viewRouter.currentPage == "page2"{
+                  Signup()
+                 }
+                 else if viewRouter.currentPage == "page3"{
+                  HamburgerOption()
+                }
+                 else if(viewRouter.currentPage == "page5"){
+                   NewTask()
               }
-               else if(viewRouter.currentPage == "page5"){
-                 NewTask(viewRouter: viewRouter)
+              else if(viewRouter.currentPage == "page6"){
+                  ModifyTask(task: Tasks.example)
             }
             
         }
@@ -32,6 +36,6 @@ struct MotherView: View {
 
 struct MotherView_Previews: PreviewProvider {
     static var previews: some View {
-        MotherView(viewRouter: ViewRouter())
+        MotherView().environmentObject(ViewRouter())
     }
 }

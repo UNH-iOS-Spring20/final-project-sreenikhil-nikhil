@@ -8,10 +8,19 @@
 
 import SwiftUI
 import GoogleSignIn
+import FirebaseFirestore
+import Firebase
+
+let newtaskCollectionRef2 = Firestore.firestore().collection("NewList")
 
 struct HamburgerOption: View {
-    @ObservedObject var viewRouter: ViewRouter
+     @EnvironmentObject var viewRouter: ViewRouter
     @State var showMenu: Bool = false
+       @EnvironmentObject var session: SessionClass
+    @ObservedObject private var tasks =
+          FirebaseCollection<Tasks>(collectionRef: newtaskCollectionRef2)
+       @ObservedObject var notificationManager = LocalNotificationManager()
+    @EnvironmentObject var msgobj: Message
     var body: some View {
         let drag = DragGesture()
                     .onEnded {
@@ -31,14 +40,16 @@ struct HamburgerOption: View {
             
             if self.showMenu{
                 
-               MenuView(viewRouter: ViewRouter()).frame(width: geometry.size.width/2)
+               MenuView().frame(width: geometry.size.width/2)
                    .transition(.move(edge: .leading))
                
             }
                 
             
             }.gesture(drag)
+            
         }.navigationBarTitle("Welcome", displayMode: .inline)
+           
           /*  .navigationBarItems(trailing:
                            Button(action: {
                                self.viewRouter.currentPage = "page1"
@@ -60,20 +71,36 @@ struct HamburgerOption: View {
             , trailing:
             
             Button(action: {
+                self.setNotifications()
+                
+                try! Auth.auth().signOut()
                 GIDSignIn.sharedInstance()?.signOut()
+                UserDefaults.standard.set(false, forKey: "status")
+                NotificationCenter.default.post(name: NSNotification.Name("statusChange"), object: nil)
+               
                 self.viewRouter.currentPage = "page1"
+              
+               
             }) {
                 Text("Logout")
             }
             )
             
-           
-
-            
-            
+        }
     }
+    func setNotifications(){
+        for item in tasks.items{
+            if(session.email == item.ssid && item.Remainder){
+             let epochTime = item.due_Date
+             let newTime1 = Date(timeIntervalSince1970:TimeInterval(epochTime.seconds))
+             
+            let p = Calendar.current.dateComponents([.year,.month,.day,.hour,.minute,], from: newTime1)
+                print("Notification is set at \(p)")
+                    self.notificationManager.sendNotification(title: "Hurray!", subtitle: nil, body: "You have to finish \(item.task_Name)", triggerDate: p)
+                    print("*********  I am called now ********")
+            }
+        }
     }
-        
 }
 
 struct MainView: View{
@@ -92,6 +119,6 @@ struct MainView: View{
 
 struct HamburgerOption_Previews: PreviewProvider {
     static var previews: some View {
-        HamburgerOption(viewRouter: ViewRouter())
+        HamburgerOption().environmentObject(ViewRouter())
     }
 }

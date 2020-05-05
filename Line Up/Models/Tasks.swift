@@ -7,13 +7,14 @@
 //
 import FirebaseFirestore
 
-class Tasks: FirebaseCodable{
+class Tasks: FirebaseCodable {
     var id: String
    @Published var task_Name : String                                   // Name of the task
-   @Published   var due_Date :  String                           // Due date of the task
+   @Published   var due_Date :  Timestamp                           // Due date of the task
     @Published  var completed: Bool         // To check if a task is marked completed or not
     @Published  var Remainder: Bool         // To check if remainder is set or not
      @Published var Notes: String
+    @Published var ssid: String
     
     var data: [String: Any]{
         return[
@@ -22,14 +23,16 @@ class Tasks: FirebaseCodable{
              "completed" :  completed,
              "Remainder" : Remainder,
              "Notes" :  Notes,
+             "ssid": ssid
         ]
     }
     required init?(id: String, data: [String: Any]){
              guard let task_Name = data["task_Name"] as? String,
-              let due_Date = data["due_Date"] as? String,
+              let due_Date = data["due_Date"] as? Timestamp,
               let completed = data["completed"] as? Bool,
               let Remainder = data["Remainder"] as? Bool,
-              let Notes = data["Notes"] as? String
+              let Notes = data["Notes"] as? String,
+              let ssid = data["ssid"] as? String
                 else{
                    return nil
                }
@@ -39,8 +42,19 @@ class Tasks: FirebaseCodable{
         self.completed = completed
         self.Remainder = Remainder
         self.Notes =  Notes
-                  
+        self.ssid = ssid
           }
+    
+    #if DEBUG
+      static let example = Tasks(id: "1", data:["task_Name": "IOSClass",
+                                       "due_Date": Date(),
+                                       "completed": false,
+                                       "Remainder": false,
+                                       "Notes": "Take Notes with you",
+                                       "ssid": "sessions"
+      ])!
+    #endif
+    
 }
     
     

@@ -33,6 +33,15 @@
 		BD5F599C2443B1BA00DD3774 /* ModifyTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5F599B2443B1BA00DD3774 /* ModifyTask.swift */; };
 		BD9DF8DB243A101100CA175B /* FirebaseSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9DF8DA243A101100CA175B /* FirebaseSession.swift */; };
 		BD9DF8DD243A42C800CA175B /* Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9DF8DC243A42C800CA175B /* Controller.swift */; };
+		BDA4A51C24525CA600EA46C2 /* DetailedTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA4A51B24525CA600EA46C2 /* DetailedTask.swift */; };
+		BDA4A52024534AF600EA46C2 /* SessionClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA4A51F24534AF600EA46C2 /* SessionClass.swift */; };
+		BDA4A522245357E000EA46C2 /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA4A521245357E000EA46C2 /* LocalNotificationManager.swift */; };
+		BDA4A5242453705200EA46C2 /* NotificationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA4A5232453705200EA46C2 /* NotificationButton.swift */; };
+		BDC0D3CB245F645F00DF2ADC /* CompletedTasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC0D3CA245F645F00DF2ADC /* CompletedTasks.swift */; };
+		BDC0D3CD245F7A9300DF2ADC /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC0D3CC245F7A9300DF2ADC /* Message.swift */; };
+		BDC0D3D1245FB9C700DF2ADC /* GoogleLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC0D3D0245FB9C700DF2ADC /* GoogleLoginView.swift */; };
+		BDC0D3D32460BD7F00DF2ADC /* Email.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC0D3D22460BD7F00DF2ADC /* Email.swift */; };
+		BDC0D41C2462057B00DF2ADC /* Demo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC0D41B2462057B00DF2ADC /* Demo.swift */; };
 		BDCBB588243A840B001CB0CE /* Homepage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCBB587243A840B001CB0CE /* Homepage.swift */; };
 		BDF63642242DAFC000F3AAA2 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF63641242DAFC000F3AAA2 /* Login.swift */; };
 		BDF63644242DB00900F3AAA2 /* MotherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF63643242DB00900F3AAA2 /* MotherView.swift */; };
@@ -89,6 +98,15 @@
 		BD5F599B2443B1BA00DD3774 /* ModifyTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyTask.swift; sourceTree = "<group>"; };
 		BD9DF8DA243A101100CA175B /* FirebaseSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseSession.swift; sourceTree = "<group>"; };
 		BD9DF8DC243A42C800CA175B /* Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Controller.swift; sourceTree = "<group>"; };
+		BDA4A51B24525CA600EA46C2 /* DetailedTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedTask.swift; sourceTree = "<group>"; };
+		BDA4A51F24534AF600EA46C2 /* SessionClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionClass.swift; sourceTree = "<group>"; };
+		BDA4A521245357E000EA46C2 /* LocalNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationManager.swift; sourceTree = "<group>"; };
+		BDA4A5232453705200EA46C2 /* NotificationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationButton.swift; sourceTree = "<group>"; };
+		BDC0D3CA245F645F00DF2ADC /* CompletedTasks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedTasks.swift; sourceTree = "<group>"; };
+		BDC0D3CC245F7A9300DF2ADC /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		BDC0D3D0245FB9C700DF2ADC /* GoogleLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleLoginView.swift; sourceTree = "<group>"; };
+		BDC0D3D22460BD7F00DF2ADC /* Email.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Email.swift; sourceTree = "<group>"; };
+		BDC0D41B2462057B00DF2ADC /* Demo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Demo.swift; sourceTree = "<group>"; };
 		BDCBB587243A840B001CB0CE /* Homepage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Homepage.swift; sourceTree = "<group>"; };
 		BDF63641242DAFC000F3AAA2 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		BDF63643242DB00900F3AAA2 /* MotherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotherView.swift; sourceTree = "<group>"; };
@@ -198,6 +216,15 @@
 				BD310FBE2440FBA6006D8B25 /* NewTask.swift */,
 				BD5F599924414A3000DD3774 /* ViewTasks.swift */,
 				BD5F599B2443B1BA00DD3774 /* ModifyTask.swift */,
+				BDA4A51B24525CA600EA46C2 /* DetailedTask.swift */,
+				BDA4A51F24534AF600EA46C2 /* SessionClass.swift */,
+				BDA4A521245357E000EA46C2 /* LocalNotificationManager.swift */,
+				BDA4A5232453705200EA46C2 /* NotificationButton.swift */,
+				BDC0D3CA245F645F00DF2ADC /* CompletedTasks.swift */,
+				BDC0D3CC245F7A9300DF2ADC /* Message.swift */,
+				BDC0D3D0245FB9C700DF2ADC /* GoogleLoginView.swift */,
+				BDC0D3D22460BD7F00DF2ADC /* Email.swift */,
+				BDC0D41B2462057B00DF2ADC /* Demo.swift */,
 			);
 			path = "Line Up";
 			sourceTree = "<group>";
@@ -532,22 +559,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDA4A522245357E000EA46C2 /* LocalNotificationManager.swift in Sources */,
+				BDC0D3D1245FB9C700DF2ADC /* GoogleLoginView.swift in Sources */,
 				BD17CDA723FCB05A00FF017D /* User.swift in Sources */,
+				BDC0D3CB245F645F00DF2ADC /* CompletedTasks.swift in Sources */,
 				BDF63648242DB04D00F3AAA2 /* Signup.swift in Sources */,
 				BD5F599C2443B1BA00DD3774 /* ModifyTask.swift in Sources */,
+				BDA4A5242453705200EA46C2 /* NotificationButton.swift in Sources */,
 				BDCBB588243A840B001CB0CE /* Homepage.swift in Sources */,
 				BD17CD6F23FC9FF900FF017D /* AppDelegate.swift in Sources */,
 				BD9DF8DD243A42C800CA175B /* Controller.swift in Sources */,
+				BDC0D3D32460BD7F00DF2ADC /* Email.swift in Sources */,
 				BD310FBF2440FBA6006D8B25 /* NewTask.swift in Sources */,
+				BDA4A52024534AF600EA46C2 /* SessionClass.swift in Sources */,
 				BD17CD7123FC9FF900FF017D /* SceneDelegate.swift in Sources */,
 				BDF63644242DB00900F3AAA2 /* MotherView.swift in Sources */,
 				BDF63646242DB02D00F3AAA2 /* ViewRouter.swift in Sources */,
 				BD17CDAB23FCC94200FF017D /* Tasks.swift in Sources */,
+				BDA4A51C24525CA600EA46C2 /* DetailedTask.swift in Sources */,
 				BD17CD7323FC9FF900FF017D /* ContentView.swift in Sources */,
 				BDF7EEA1243FFBC8006DB537 /* MenuView.swift in Sources */,
+				BDC0D41C2462057B00DF2ADC /* Demo.swift in Sources */,
 				BD9DF8DB243A101100CA175B /* FirebaseSession.swift in Sources */,
 				BDF7EE9F243FFAED006DB537 /* HamburgerOption.swift in Sources */,
 				BD5F599A24414A3000DD3774 /* ViewTasks.swift in Sources */,
+				BDC0D3CD245F7A9300DF2ADC /* Message.swift in Sources */,
 				BD5F5998244124FC00DD3774 /* FirebaseCollection.swift in Sources */,
 				BDF63642242DAFC000F3AAA2 /* Login.swift in Sources */,
 			);

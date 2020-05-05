@@ -34,7 +34,6 @@ class FirebaseCollection<T: FirebaseCodable>: ObservableObject{
                 }
                 else{
                     fatalError("I am facing lot of problems"+"unable to initialize type \(T.self) with dictionary \(document.data())")
-                    
                 }
                 }
             self.items = models
