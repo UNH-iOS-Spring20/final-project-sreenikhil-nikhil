@@ -9,6 +9,7 @@
 import SwiftUI
 import FirebaseFirestore
 
+
 let taskCollectionRef1 = Firestore.firestore().collection("NewList")
 
 struct ModifyTask: View {

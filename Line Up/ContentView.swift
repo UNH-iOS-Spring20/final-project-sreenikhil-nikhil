@@ -10,6 +10,8 @@
 //
 import SwiftUI
 import FirebaseFirestore
+import Firebase
+
 let db = Firestore.firestore()
 struct ContentView: View {
     var body: some View {

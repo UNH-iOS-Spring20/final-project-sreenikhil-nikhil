@@ -70,6 +70,7 @@ struct HamburgerOption: View {
             }
             , trailing:
             
+             // Logout
             Button(action: {
                 self.setNotifications()
                 
@@ -84,6 +85,8 @@ struct HamburgerOption: View {
             }) {
                 Text("Logout")
             }
+        
+        
             )
             
         }

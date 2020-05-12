@@ -6,7 +6,9 @@
 //  Copyright © 2020 Sreenikhil Kollu. All rights reserved.
 //
 
+
 import FirebaseFirestore
+
 class User: FirebaseCodable{
      var id: String
     @Published var firstname: String
@@ -29,9 +31,13 @@ class User: FirebaseCodable{
                  let lastname = data["lastname"] as? String,
                  let email = data["email"] as? String,
                  let password = data["password"] as? String
-                   else{
-                      return nil
-                  }
+              else{
+                 return nil
+            }
+
+        /*if(firstname.isEmpty || lastname.isEmpty || email.isEmpty || password.isEmpty){
+            return nil
+            }*/
            self.id = id
            self.firstname = firstname
            self.lastname = lastname
@@ -40,3 +46,5 @@ class User: FirebaseCodable{
                      
              }
 }
+
+

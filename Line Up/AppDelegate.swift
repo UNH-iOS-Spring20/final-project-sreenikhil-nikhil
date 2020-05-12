@@ -40,8 +40,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate{
       }
       guard let authentication = user.authentication else { return }
       let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
-                                                        accessToken: authentication.accessToken)
-         Auth.auth().signIn(with: credential)
+                                                        accessToken: authentication.accessToken)// Google
+         Auth.auth().signIn(with: credential) // Firebase
          {  (authResult, error) in
           if let error = error {
               print("Firebase sign in error")

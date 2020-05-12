@@ -9,6 +9,7 @@
 import SwiftUI
 import FirebaseFirestore
 
+
 let userCollectionRef = Firestore.firestore().collection("User")
 
 struct Signup: View {
@@ -17,17 +18,26 @@ struct Signup: View {
     @State var password: String = ""
     @State var firstname: String = ""
     @State var lastname: String = ""
+    
+    var alert: Alert {
+              Alert(title: Text("Result"), message: Text("Sign Up Successful"), dismissButton: .default(Text("Ok")))
+          }
+    
+    @State var NotSuccessfulSignup: Bool = false
+    
        var body: some View {
            VStack{
-               HStack{
-                   TextField("FirstName", text: $firstname).padding(12).frame(width: 180).border(Color.black)
+               //HStack{
+            TextField("FirstName", text: $firstname).padding(12).frame(width:370).border(Color.black)
                        .autocapitalization(.none)
+                      .frame(width:370)
 
                    
-                   TextField("LastName", text: $lastname).padding(12).frame(width:180).border(Color.black)
+                   TextField("LastName", text: $lastname).padding(12).frame(width:370).border(Color.black)
                       .autocapitalization(.none)
+                
                    
-               }.padding(EdgeInsets(top: 0, leading: 0, bottom: 10, trailing: 0))
+               //}.padding(EdgeInsets(top: 0, leading: 0, bottom: 10, trailing: 0))
                
                TextField("Email", text: $email).padding(12).frame(width:370).border(Color.black)
                    .autocapitalization(.none)
@@ -42,6 +52,7 @@ struct Signup: View {
                                       Spacer()
                                   }.padding().background(Color.black).cornerRadius(4.0).frame(width: 370)
                }.padding(EdgeInsets(top: 15, leading: 0, bottom: 0, trailing: 0))
+                 .alert(isPresented: $NotSuccessfulSignup, content: { self.alert })
                
                Button(action: {self.viewRouter.currentPage = "page1"}){
                               HStack(alignment: .center){
@@ -61,6 +72,7 @@ struct Signup: View {
         let data = ["firstname": firstname, "lastname": lastname, "email": email, "password": password]as [String : Any]
         
         userCollectionRef.addDocument(data: data)
+        NotSuccessfulSignup = true
     }
      
 }

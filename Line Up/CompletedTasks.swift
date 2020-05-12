@@ -9,6 +9,7 @@
 import SwiftUI
 import FirebaseFirestore
 
+
 let newtaskCollectionRef3 = Firestore.firestore().collection("NewList")
 
 struct CompletedTasks: View {
@@ -31,7 +32,7 @@ struct CompletedTasks: View {
                                    ForEach(list){
                                       items in
                                     Text(items.task_Name).padding(10)
-                                     .background(Color.gray)
+                                     .background(Color(red: 0.67, green: 0.86, blue: 0.89))
                                      .cornerRadius(4.0)
                                           
                                    

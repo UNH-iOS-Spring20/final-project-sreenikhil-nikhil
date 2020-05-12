@@ -5,9 +5,13 @@
 //  Created by Sreenikhil Kollu on 2/18/20.
 //  Copyright © 2020 Sreenikhil Kollu. All rights reserved.
 //
+
+
 import FirebaseFirestore
 
-class Tasks: FirebaseCodable {
+
+
+class Tasks: FirebaseCodable{
     var id: String
    @Published var task_Name : String                                   // Name of the task
    @Published   var due_Date :  Timestamp                           // Due date of the task
@@ -56,5 +60,5 @@ class Tasks: FirebaseCodable {
     #endif
     
 }
-    
-    
+
+

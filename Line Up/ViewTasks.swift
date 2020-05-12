@@ -20,6 +20,7 @@ struct ViewTasks: View {
       @EnvironmentObject var viewRouter: ViewRouter
         @EnvironmentObject var session: SessionClass
       @ObservedObject var notificationManager = LocalNotificationManager()
+    static let oldPrimaryColor = Color(UIColor(red: 173, green: 221, blue: 230, alpha: 0.25))
     
     var body: some View {
         var list: [Tasks] = []
@@ -39,7 +40,9 @@ struct ViewTasks: View {
                         {
                          Text(task.task_Name)
                         }.padding(10)
-                      .background(Color.gray)
+                          
+                            .background(Color(red: 0.67, green: 0.86, blue: 0.89))
+                            
                       .cornerRadius(4.0)
                       .frame(width: 300)
                             

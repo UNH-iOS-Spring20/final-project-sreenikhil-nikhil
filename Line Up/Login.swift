@@ -23,7 +23,7 @@ struct Login: View{
     
     @EnvironmentObject var viewRouter: ViewRouter
       @ObservedObject private var users =
-        FirebaseCollection<User>(collectionRef: newuserCollectionRef)
+       FirebaseCollection<User>(collectionRef: newuserCollectionRef)
     
     @EnvironmentObject var session: SessionClass
     @EnvironmentObject var pmail : Email
@@ -49,12 +49,15 @@ struct Login: View{
             Text("Login").bold().font(.title)
             Text("Organizing Things").bold().font(.subheadline).padding(10.0)
             
+            // Email
             TextField("Email", text:$email).padding(10).cornerRadius(4.0).border(Color.black).frame(width: 350)
                  .autocapitalization(.none)
             
+            // Password
             SecureField("Password", text: $password).padding(10).cornerRadius(4.0).border(Color.black).frame( width: 350)
                 .autocapitalization(.none)
             
+            //Submit
             Button(action: submit) {
                 HStack(alignment: .center){
                     Spacer()
@@ -117,12 +120,13 @@ struct Login: View{
     
   
     
-    
+    // Submit function
     func submit(){
         //I will do the job at any cost
         let email = $email.wrappedValue
         let password = $password.wrappedValue
         var flag = true
+        // Data from database
         for user in users.items{
             print("Email is: \(user.email) and Password is: \(user.password)")
             if(user.email == email && user.password == password){
